@@ -1,5 +1,10 @@
 <template>
-  <div @click="test">friend page</div>
+  <div class="friend" @click="test">
+    <img class="friend-img" src="~/assets/flower.jpg" alt="flower" />
+    <img class="friend-img" src="~/assets/flower.jpg" alt="flower" />
+    <img class="friend-img" src="~/assets/flower.jpg" alt="flower" />
+    <div class="friend-bg"></div>
+  </div>
 </template>
 <script>
 export default {
@@ -25,4 +30,17 @@ export default {
 };
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.friend {
+  &-img {
+    width: 100%;
+    height: auto;
+  }
+
+  &-bg {
+    width: 100%;
+    height: 300px;
+    background: url(~/assets/flower.jpg) center / cover no-repeat;
+  }
+}
+</style>

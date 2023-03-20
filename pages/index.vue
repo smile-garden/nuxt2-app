@@ -12,7 +12,26 @@ export default {
   name: 'IndexPage',
   data() {
     return {
+      title: 'Home page',
       active: 0,
+    };
+  },
+
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'This is page for home',
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'one,two,three',
+        },
+      ],
     };
   },
 };

@@ -15,6 +15,15 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  loading: {
+    color: 'red',
+    height: '3px',
+  },
+
+  generate: {
+    fallback: '404.html',
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['vant/lib/index.css'],
 
