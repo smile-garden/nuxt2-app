@@ -1,4 +1,4 @@
 import Vue from 'vue';
-import Vant from 'vant';
+import Vant, { Lazyload } from 'vant';
 
-Vue.use(Vant);
+Vue.use(Vant).use(Lazyload);

@@ -2,19 +2,32 @@
   <div class="container">
     <div>
       <h1 class="title">Welcome to the Vant + Nuxt.js template</h1>
-      <div class="subtitle">阿道夫 撒旦法</div>
+      <div class="subtitle">welcome welcome</div>
+      <div v-for="item in fetchList" :key="item.id" class="item">
+        <van-image :src="item.imageUrl" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'IndexPage',
   data() {
     return {
       title: 'Home page',
       active: 0,
+      fetchList: [],
     };
+  },
+
+  async fetch() {
+    const res = await axios.get(
+      'http://testapi.xuexiluxian.cn/api/slider/getSliders',
+    );
+    this.fetchList = res.data.data.list;
   },
 
   head() {
