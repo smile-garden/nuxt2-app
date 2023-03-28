@@ -10,6 +10,11 @@
 export default {
   components: {},
 
+  validate({ query, _params }) {
+    // console.log(query, params);
+    return /^\d+$/.test(query.id);
+  },
+
   data() {
     return {};
   },
@@ -24,7 +29,7 @@ export default {
 
   methods: {
     test() {
-      // console.log(this.$store.getters.getToken2, this.$store.state)
+      // console.log(this.$store.getters.token2, this.$store.state)
     },
   },
 };

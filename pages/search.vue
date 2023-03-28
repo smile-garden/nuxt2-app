@@ -5,13 +5,27 @@
 export default {
   components: {},
 
+  asyncData() {
+    // console.log('asyncdata');
+  },
+
   data() {
     return {};
   },
 
+  fetch() {
+    // console.log('fetch');
+  },
+
   computed: {},
 
-  created() {},
+  beforeCreate() {
+    // console.log('beforeCreate');
+  },
+
+  created() {
+    // console.log('created');
+  },
 
   methods: {},
 };

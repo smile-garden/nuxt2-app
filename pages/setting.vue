@@ -8,7 +8,10 @@
 <script>
 export default {
   components: {},
-
+  // middleware: 'auth',
+  middleware() {
+    // console.log('middleware auth page')
+  },
   async asyncData({ $axios }) {
     const res = await $axios.$get(
       'http://testapi.xuexiluxian.cn/api/slider/getSliders',

@@ -4,10 +4,10 @@ export const state = () => ({
 });
 
 export const getters = {
-  getToken(state) {
+  token(state) {
     return state.token;
   },
-  getToken2(state) {
+  token2(state) {
     return state.token2;
   },
 };
@@ -21,4 +21,9 @@ export const mutations = {
   },
 };
 
-export const actions = {};
+export const actions = {
+  nuxtServerInit(store) {
+    store.commit('setToken', '更新token333');
+    console.log(store, 'nuxtServerInit');
+  },
+};

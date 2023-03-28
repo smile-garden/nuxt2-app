@@ -11,8 +11,6 @@
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
   name: 'IndexPage',
   data() {
@@ -24,7 +22,7 @@ export default {
   },
 
   async fetch() {
-    const res = await axios.get(
+    const res = await this.$axios.get(
       'http://testapi.xuexiluxian.cn/api/slider/getSliders',
     );
     this.fetchList = res.data.data.list;

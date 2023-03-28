@@ -1,5 +1,5 @@
 export default {
-  target: 'static',
+  target: 'server',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt2-demo',
@@ -62,4 +62,8 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  router: {
+    middleware: 'auth',
+  },
 };

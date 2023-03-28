@@ -1,4 +1,5 @@
 import createPersistedState from 'vuex-persistedstate';
+// cookie-universal-nuxt
 
 export default ({ store }) => {
   window.onNuxtReady(() => {
