@@ -23,7 +23,6 @@ export default {
 
   created() {
     // console.log(this.$route.query, process)
-    this.$store.commit('setToken', 'sdfasdfadsrer');
     this.$store.commit('setToken2', { a: '2333' });
   },
 

@@ -1,9 +1,8 @@
 import createPersistedState from 'vuex-persistedstate';
-// cookie-universal-nuxt
 
 export default ({ store }) => {
-  window.onNuxtReady(() => {
-    createPersistedState({
+  window.onNuxtReady(async () => {
+    await createPersistedState({
       storage: localStorage,
       key: 'store',
       paths: ['token2', 'token'],

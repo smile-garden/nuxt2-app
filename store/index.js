@@ -15,6 +15,7 @@ export const getters = {
 export const mutations = {
   setToken(state, token) {
     state.token = token;
+    this.$cookies.set('token', token);
   },
   setToken2(state, token) {
     state.token2 = token;
@@ -22,8 +23,14 @@ export const mutations = {
 };
 
 export const actions = {
-  nuxtServerInit(store) {
-    store.commit('setToken', '更新token333');
-    console.log(store, 'nuxtServerInit');
+  nuxtServerInit(store, { app: { $cookies } }) {
+    const token = $cookies.get('token') || '';
+    store.commit('setToken', token);
+  },
+  logout({ commit }) {
+    return new Promise((resolve) => {
+      commit('setToken', '');
+      resolve();
+    });
   },
 };

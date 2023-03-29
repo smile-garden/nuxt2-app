@@ -25,7 +25,7 @@ export default {
     const res = await this.$axios.get(
       'http://testapi.xuexiluxian.cn/api/slider/getSliders',
     );
-    this.fetchList = res.data.data.list;
+    this.fetchList = res.data.list;
   },
 
   head() {
