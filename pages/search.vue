@@ -1,10 +1,18 @@
 <template>
-  <div>search page</div>
+  <div>
+    <ul>
+      <li>{{ msg }}</li>
+      <li>{{ oldMsg }}</li>
+      <li>{{ oldGetStr }}</li>
+      <li>{{ getStr }}</li>
+    </ul>
+    <button @click="changeStr">改变</button>
+  </div>
 </template>
 <script>
-export default {
-  components: {},
+import { mapState, mapGetters, mapMutations } from 'vuex';
 
+export default {
   asyncData() {
     // console.log('asyncdata');
   },
@@ -17,7 +25,21 @@ export default {
     // console.log('fetch');
   },
 
-  computed: {},
+  computed: {
+    ...mapState({
+      msg: (state) => state.todo.str,
+    }),
+    oldMsg() {
+      return this.$store.state.todo.str;
+    },
+    oldGetStr() {
+      return this.$store.getters['todo/getStr'];
+    },
+    // ...mapGetters('todo', ['getStr']),
+    ...mapGetters({
+      getStr: 'todo/getStr',
+    }),
+  },
 
   beforeCreate() {
     // console.log('beforeCreate');
@@ -27,6 +49,14 @@ export default {
     // console.log('created');
   },
 
-  methods: {},
+  methods: {
+    /* ...mapMutations({
+      changeStr: 'todo/changeStr',
+    }), */
+    ...mapMutations('todo', ['changeStr']),
+    /* changeStr() {
+      this.$store.commit('todo/changeStr');
+    } */
+  },
 };
 </script>
